@@ -1,0 +1,11 @@
+{% extends 'todo/base.html' %}   <!--그냥 base.html로 하면 파일을 못 찾는다-->
+
+{% block body_block %}
+<form action="/todos/create", method="post">
+    <input type="text" name="title">
+    <input type="date" name="deadline">
+    <input type="submit">
+</form>
+{% endblock %}
+
+
