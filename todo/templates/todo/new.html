@@ -1,11 +1,10 @@
 {% extends 'todo/base.html' %}   <!--그냥 base.html로 하면 파일을 못 찾는다-->
 
 {% block body_block %}
-<form action="/todos/create", method="post">
+<form action="/todos/create/", method="post">
+    {% csrf_token %}   <!--CSRF 공격 막기-->
     <input type="text" name="title">
     <input type="date" name="deadline">
     <input type="submit">
 </form>
 {% endblock %}
-
-
